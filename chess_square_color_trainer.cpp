@@ -23,6 +23,12 @@ random_chess_coordinate()
   return (char)(x + 'a') + std::to_string(y + 1);
 }
 
+void
+downcase(std::string &s)
+{
+  std::transform(s.begin(), s.end(), s.begin(), ::tolower);
+}
+
 int main(void)
 {
   for (;;)
