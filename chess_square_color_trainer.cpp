@@ -31,20 +31,30 @@ downcase(std::string &s)
 
 int main(void)
 {
+  std::string guess;
+  std::string coord;
+
   for (;;)
   {
-    std::string coord = random_chess_coordinate();
-    std::string guess;
+    coord = random_chess_coordinate();
 
     std::cout << "What color is " << coord << "? ";
     std::cin >> guess;
 
-    // TODO: Add a little validation to the input
+    downcase(guess);
+
     if (guess == "0")
       break;
-    else if (guess == chess_square_color(coord)) {
+    else if (guess != "light" and guess != "dark")
+    {
+      std::cout << "Invalid input. Must be either light or dark." << std::endl;
+    }
+    else if (guess == chess_square_color(coord))
+    {
       std::cout << "Correct!" << std::endl;
-    } else {
+    }
+    else
+    {
       std::cout << "Wrong you fool!" << std::endl;
     }
 
