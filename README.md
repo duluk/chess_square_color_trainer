@@ -10,6 +10,8 @@ eye.
 
 Currently the 'training' occurs through trial and error.
 
-TODO - Something I intend to add soon is a --train option which will somehow
-show the coordinate and color on the screen. I'm not sure how I want to
-implement it though.
+Future improvements:
+1. Add a --train option which will somehow show the coordinate and color on the
+   screen. I'm not sure how I want to implement it though.
+1. Track which ones have been asked and periodically ask them again, with
+   emphasis on the ones that were guessed incorrectly.
