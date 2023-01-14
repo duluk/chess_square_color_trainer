@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 #include <cstdlib>
 #include <ctime>
 
@@ -45,7 +47,7 @@ int main(void)
 
     if (guess == "0")
       break;
-    else if (guess != "light" and guess != "dark")
+    else if (guess != "light" && guess != "dark")
     {
       std::cout << "Invalid input. Must be either light or dark." << std::endl;
     }
