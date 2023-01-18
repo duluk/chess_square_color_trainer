@@ -7,13 +7,13 @@
 # == dark. An odd number + odd number is an even number. IOW, `a` needs to be 1
 # not 0, then the odd/even test works correctly.
 
-# Convert the letter to a number using ASCII values, then check whether the
-# number is even or odd. An even number should be light and odd, dark. See
-# above comment.
+# More succinct. The basic idea is that if the values of the coordinates add
+# up to an even number, then the square is dark. If we see the letters as
+# (a=1,b=2,c=3,etc), then we can simply add the two together if it is even
+# it's dark. The bitwise AND with 1 will evaluate to 1 for even and 0 for odd.
+# I leave that as an exercise for the reader.
 def chess_square_color(coordinate)
-  x = (coordinate[0].ord - 'a'.ord) + 1
-  y = coordinate[1].to_i - 1
-  (x + y) % 2 == 0 ? "light" : "dark"
+  (coordinate[0].ord + coordinate[1].ord) & 1 ? "light" : "dark"
 end
 
 def random_chess_coordinate
@@ -28,8 +28,9 @@ puts "is. Doing this without looking at a chess board will help visualize the"
 print "board in your mind.\n\n"
 print "Enter 0 to quit.\n\n"
 
+coord = nil
 while true
-  coord = random_chess_coordinate
+  coord = random_chess_coordinate unless coord
 
   print "What color is #{coord}? "
   guess = gets.chomp.downcase
@@ -38,13 +39,14 @@ while true
     break
   elsif not (guess == 'light' or guess == 'dark')
     puts "Invalid response. Valid responses are light or dark."
-  end
-
-  if guess == chess_square_color(coord)
+    next
+  elsif guess == chess_square_color(coord)
     puts "Correct!"
   else
     puts "Wrong you fool!"
   end
+
+  coord = nil
 
   # Newline for separation and cleanliness
   print "\n"
