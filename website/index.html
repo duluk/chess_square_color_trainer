@@ -7,15 +7,23 @@
 
     <body>
         <h2>Chess Square Color Trainer</h2>
-        <p id="coordinate"></p>
-        <form>
-            <label for="guess">Color?</label>
-            <input type="text" id="guess" onselect="clearResult()">
-            <button type="button" onclick="chessGuess()">Check</button>
-        </form>
-        <!-- <p id="result" style="display:none"></p> -->
-        <p id="result" style="display:block"></p>
 
-        <script src="js/chess_square_color_trainer.js"></script>
+        <p id="coordinate"></p>
+
+        <div>
+            <input type="radio" id="light" name="guess" value="light">
+            <label for="light">Light</label>
+        </div>
+        <div>
+            <input type="radio" id="dark" name="guess" value="dark">
+            <label for="dark">Dark</label>
+        </div>
+        <div>
+            <button type="button" onclick="chessGuess()">Check</button>
+        </div>
+
+        <p id="result"></p>
+
+        <script src="js/chess_square_color_trainer_radio.js"></script>
     </body>
 </html>
