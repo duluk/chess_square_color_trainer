@@ -1,0 +1,21 @@
+<DOCTYPE! html>
+
+<html>
+    <head>
+        <title>Chess Square Color Trainer</title>
+    </head>
+
+    <body>
+        <h2>Chess Square Color Trainer</h2>
+        <p id="coordinate"></p>
+        <form>
+            <label for="guess">Color?</label>
+            <input type="text" id="guess" onselect="clearResult()">
+            <button type="button" onclick="chessGuess()">Check</button>
+        </form>
+        <!-- <p id="result" style="display:none"></p> -->
+        <p id="result" style="display:block"></p>
+
+        <script src="js/chess_square_color_trainer.js"></script>
+    </body>
+</html>
