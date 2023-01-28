@@ -15,22 +15,30 @@ function randomChessCoordinate() {
     return String.fromCharCode(x + 'a'.charCodeAt(0)) + (y + 1);
 }
 
+function returnButtons() {
+    return document.querySelectorAll('input[name="guess"]');
+}
+
+function clearButtons() {
+    // Clear out the previous selection
+    const radioButtons = returnButtons();
+    for (const radioButton of radioButtons) {
+        radioButton.checked = false;
+    }
+}
+
 function getRandomCoord() {
     currentCoord = randomChessCoordinate();
     document.querySelector("#coordinate").innerHTML = "What color is " + currentCoord + "?";
 
-    // Clear out the previous selection
-    const radioButtons = document.querySelectorAll('input[name="guess"]');
-    for (const radioButton of radioButtons) {
-        radioButton.checked = false;
-    }
+    clearButtons();
 }
 
 function chessGuess() {
     let guess = "";
     let result = "";
 
-    const radioButtons = document.querySelectorAll('input[name="guess"]');
+    const radioButtons = returnButtons();
     for (const radioButton of radioButtons) {
         if (radioButton.checked) {
             guess = radioButton.value;
