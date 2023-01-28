@@ -1,0 +1,34 @@
+:root {
+    --form-control-color: rebeccapurple;
+}
+
+$color1: #F4F4F4;
+$color2: #3197EE;
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+p#coordinate {
+    font-size: 1.75em;
+}
+
+.radio {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+
+.guess-button {
+    margin-top: 1em;
+    font-size: 1.25em;
+}
