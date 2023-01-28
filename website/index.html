@@ -3,23 +3,26 @@
 <html>
     <head>
         <title>Chess Square Color Trainer</title>
+        <link rel="stylesheet" href="css/chess_guess_simple.css">
     </head>
 
     <body>
-        <h2>Chess Square Color Trainer</h2>
+        <h1>Chess Square Color Trainer</h1>
 
         <p id="coordinate"></p>
 
-        <div>
-            <input type="radio" id="light" name="guess" value="light">
-            <label for="light">Light</label>
-        </div>
-        <div>
-            <input type="radio" id="dark" name="guess" value="dark">
-            <label for="dark">Dark</label>
-        </div>
-        <div>
-            <button type="button" onclick="chessGuess()">Check</button>
+        <div class="container">
+            <div class="radio">
+                <input type="radio" id="light" name="guess" value="light">
+                <label for="light" class="radio-label">Light</label>
+            </div>
+            <div class="radio">
+                <input type="radio" id="dark" name="guess" value="dark">
+                <label for="dark" class="radio-label">Dark</label>
+            </div>
+            <div>
+                <button class="guess-button" type="button" onclick="chessGuess()">Check</button>
+            </div>
         </div>
 
         <p id="result"></p>
